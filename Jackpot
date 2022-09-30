@@ -1,0 +1,27 @@
+// Create a function that takes in an array (slot machine outcome) and returns true if all elements in the array are identical, and false otherwise. The array will contain 4 elements.
+
+// SOLUTION 1
+function testJackpot(result) {
+
+    let r = result[0]
+    for(let i=0; i<result.length; i++){
+        if (result[i]!== r){
+        return false
+        }
+    }
+    return true	
+    }
+
+// SOLUTION 2
+function testJackpot(result){
+    return result.every(item => item === result[0])
+}
+
+// SOLUTION 3
+const testJackpot = result => result.every(item => item === result[0])
+
+console.log(testJackpot(["@", "@", "@", "@"])) // true
+console.log(testJackpot(["abc", "abc", "abc", "abc"])) // true
+console.log(testJackpot(["SS", "SS", "SS", "SS"])) // true
+console.log(testJackpot(["&&", "&", "&&&", "&&&&"])) // false
+console.log(testJackpot(["SS", "SS", "SS", "Ss"])) // false
